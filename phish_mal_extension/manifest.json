@@ -1,36 +1,36 @@
 {
-  "manifest_version": 3,
-  "name": "Phishing & Malware Detector",
-  "version": "1.0",
-  "permissions": [
-    "activeTab",
-    "downloads",
-    "desktopCapture",
-    "notifications",
-    "storage",
-    "scripting",
-    "tabs"
-  ],
-  "background": {
-    "service_worker": "scripts/background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["scripts/contentScript.js"]
-    }
-  ],
-  "action": {
-    "default_popup": "pages/popup.html",
-    "default_icon": {
+    "manifest_version": 3,
+    "name": "Phishing & Malware Detector",
+    "version": "1.0",
+    "permissions": [
+      "activeTab",
+      "downloads",
+      "desktopCapture",
+      "notifications",
+      "storage",
+      "scripting",
+      "tabs"
+    ],
+    "background": {
+      "service_worker": "scripts/background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["scripts/contentScript.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "pages/popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      }
+    },
+    "icons": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     }
-  },
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
   }
-}
