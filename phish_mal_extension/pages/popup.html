@@ -1,16 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Safety Check</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Scanner</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="popup.css">
 </head>
 <body class="bg-gray-100 p-4">
   <div class="max-w-sm mx-auto">
-    <h3 class="text-xl font-bold text-center mb-4">Phishing & Malware Detector</h3>
-    <p class="text-center text-gray-700 mb-2">Protects your links and downloads.</p>
-    <p id="status" class="text-center text-gray-700">Extension is active.</p>
-    <button id="toggle" class="w-full mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Disable</button>
+    <div class="flex items-center justify-center gap-2 mb-3">
+      <img src="../icons/icon48.png" alt="Logo" class="w-8 h-8">
+      <h3 class="text-xl font-bold text-center">Security Scanner</h3>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+      <div class="flex items-center justify-between mb-4">
+        <p class="font-medium text-gray-700">Protection Status</p>
+        <div class="relative inline-block w-12 align-middle select-none">
+          <input type="checkbox" id="toggleSwitch" class="sr-only" checked>
+          <label for="toggleSwitch" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+        </div>
+      </div>
+      <p id="status" class="text-center text-sm text-gray-600 mb-2">Extension is active</p>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow-md p-4">
+      <h4 class="font-semibold text-gray-800 mb-2">Protection Features</h4>
+      <ul class="text-sm text-gray-600 space-y-1 mb-4">
+        <li class="flex items-start">
+          <svg class="h-5 w-5 text-green-500 mr-1 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          Link safety verification
+        </li>
+        <li class="flex items-start">
+          <svg class="h-5 w-5 text-green-500 mr-1 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          Download scanning
+        </li>
+        <li class="flex items-start">
+          <svg class="h-5 w-5 text-green-500 mr-1 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          Threat notifications
+        </li>
+      </ul>
+      
+      <div class="text-xs text-gray-500 pt-2 border-t border-gray-200">
+        <p class="mb-1">Server Status: <span id="serverStatus">Checking...</span></p>
+        <p>Protected by VirusTotal API and Gemini AI</p>
+      </div>
+    </div>
+    
+    <div class="mt-3 text-center text-xs text-gray-500">
+      <p>Version 1.1.0</p>
+    </div>
   </div>
   <script src="popup.js"></script>
 </body>
